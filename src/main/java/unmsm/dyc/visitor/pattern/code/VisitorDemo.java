@@ -8,14 +8,14 @@ public class VisitorDemo {
 	
 	private final AutoParte car;
 	
-	VisitorDemo() {
-		car = new Car();
+	VisitorDemo(AutoParte car) {
+		this.car = car;
 	}
 	
 	public static void main(final String[] args) {
         
     
-		new VisitorDemo().execute();
+		new VisitorDemo(new Car()).execute();
 		
     }
 	
