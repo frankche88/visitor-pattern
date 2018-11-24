@@ -1,34 +1,37 @@
+
 [TOC]
 
 
 # Behavioral Design Patterns- Visitor Pattern
-El libro Gang of Four define el patrón Visitor Pattern como:
-“Represents an operation to be performed on elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.”
+El libro Gang of Four define el patrï¿½n Visitor Pattern como:
+ï¿½Represents an operation to be performed on elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.ï¿½
 
 Nos permite separar los algoritmos de la estructura del objeto.
 - Se tiene un objeto con una estructura definida (posee elementos).
 - Conjunto de algoritmos aplicados a los elementos del objeto; que no modifican o afectan al objeto o sus elementos.
 
-Veamos el diagrama de clases del patrón:
+Veamos el diagrama de clases del patrï¿½n:
 
 ![](https://static.dzone.com/dz1/dz-files/visitor_pattern.png)
 
-### Cuando usar el patrón Visitor:
-- La estructura del objeto no cambia con frecuencia, pero sí podrían las operaciones que definen su comportamiento.
-- Se tiene una funcionalidad específica para cada elemento de la clase y desea encapsularla.
-- La operación requiere datos que el objeto no conoce.
-- Desea mantener el estado dentro de las operaciones en múltiples objetos.
+### Cuando usar el patrï¿½n Visitor:
+- La estructura del objeto no cambia con frecuencia, pero sï¿½ podrï¿½an las operaciones que definen su comportamiento.
+- Se tiene una funcionalidad especï¿½fica para cada elemento de la clase y desea encapsularla.
+- La operaciï¿½n requiere datos que el objeto no conoce.
+- Desea mantener el estado dentro de las operaciones en mï¿½ltiples objetos.
 
-### Diferencias entre el patrón strategy pattern y visitor pattern
-- El patrón estrategia representa una relación 1:many. Donde se tiene un objeto al que se quiere aplicar múltiples operaciones (estrategias).
+### Diferencias entre el patrï¿½n strategy pattern y visitor pattern
+- El patrï¿½n estrategia representa una relaciï¿½n 1:many. 
+  - Donde se tiene un objeto al que se quiere aplicar mï¿½ltiples operaciones (estrategias).
 Por ejemplo:
-Se tiene una clase Video que encapsula un video clip, y deseo comprimirlo usando diferentes algoritmos; para ello creamos múltiples clases estrategia.
+Se tiene una clase Video que encapsula un video clip, y deseo comprimirlo usando diferentes algoritmos; para ello creamos mï¿½ltiples clases estrategia.
       MpegCompression
       AviCompression
       QuickTimeCompression
-- El patrón visitor representa una relación de many:many. Que sucede si la aplicación crece y ahora no solo se incluye video sino también audio. Si se desea atacar el problema con el patrón estrategia se tendría que duplicar la clase de compresión uno para video y la otra para audio:
+- El patrï¿½n visitor representa una relaciï¿½n de many:many. 
+  - Que sucede si la aplicaciï¿½n crece y ahora no solo se incluye video sino tambiï¿½n audio. Si se desea atacar el problema con el patrï¿½n estrategia se tendrï¿½a que duplicar la clase de compresiï¿½n uno para video y la otra para audio:
       MpegVideoCompression
       MpegAudioCompression
-- Si uso el patron visitor, no tengo que duplicar clases; lo único que tengo que hacer es agregar un método:
+  - Si uso el patron visitor, no tengo que duplicar clases; lo ï¿½nico que tengo que hacer es agregar un mï¿½todo:
       MpegCompression::compressVideo(Video object)
       MpegCompression::compressAudio(Audio object)
